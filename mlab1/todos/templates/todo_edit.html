@@ -1,0 +1,20 @@
+{% extends "header.html" %}
+
+{% block content %}
+<div class="well">
+<form action="{% url 'editTodo' todo.id %}" method="post" class="form-inline">
+{% csrf_token %}
+	<div class="form-group">
+  		<label for="title">Title: </label>
+  		<input type="text" name="title" id="title" class="form-control" value="{{todo.title}}" />
+	</div>
+	&emsp;
+	<div class="form-group">
+  		<label for="priority">Priority: </label>
+  		<input type="text" name="priority" id="priority" class="form-control" value="{{todo.priority}}" />
+	</div>
+  	&emsp;
+  	<input type="submit" class="btn btn-primary" value="Submit"/>
+</form>
+</div>
+{% endblock content %}

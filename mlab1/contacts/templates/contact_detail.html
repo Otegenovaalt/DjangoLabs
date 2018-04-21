@@ -1,0 +1,42 @@
+{% extends "baseContact.html" %}
+
+{% block content %}
+<div class="well">
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/contact.css' %}">
+
+	<div class="details">
+		<div class="panel panel-default">
+			
+				<div class="panel-body">
+					<label >First Name:</label><br />
+					
+					{{contact.firstName}}
+					
+				</div>
+				
+				<div class="panel-body">
+					<label >Last Name:</label><br />
+					{{contact.lastName}}
+				</div>
+				<div class="panel-body">
+					<label >Phone:</label><br />
+					{{contact.phone}}
+				</div>
+				<div class="panel-body">
+					<label >Email:</label><br />
+					{{contact.email}}
+				</div>
+				<div class="panel-body">
+					<a href="{% url 'contact_edit' contact.id %}" className="contact-detail">
+						<button class="btn btn-info">Edit</button>
+					</a>
+				</div>
+		</div>	
+	</div>
+	
+</div>
+
+</div>
+
+{% endblock content %}

@@ -1,0 +1,17 @@
+{% extends "baseContact.html" %}
+
+{% block content %}
+
+<div class="well">
+{% for contact in contacts %}
+	<div class="panel panel-info">
+		<div class="panel-heading">
+			<a href="{% url 'contact_detail' contact.id %}">{{contact.firstName}}</a>
+		</div>
+		<div class="panel-body">
+			<a href="{% url 'contact_delete' contact.id %}"><button class="btn btn-danger">delete</button></a>
+		</div>
+	</div>
+{% endfor %}
+</div>
+{% endblock content %}

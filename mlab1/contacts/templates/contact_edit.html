@@ -1,0 +1,30 @@
+{% extends "baseContact.html" %}
+
+{% block content %}
+<div class="well">
+<form action="{% url 'contact_edit' contact.id %}" method="post">
+{% csrf_token %}
+<div class="form-group">
+  <label for="firstName">First Name:</label><br />
+  <input type="text" name="firstName" id="firstName" value="{{contact.firstName}}" class="form-control" />
+</div>
+<div class="form-group">
+  <label for="lastName">Last Name:</label><br />
+  <input type="text" name="lastName" id="lastName" value="{{contact.lastName}}" class="form-control"/>
+</div>
+<div class="form-group">
+  <label for="phone">Phone:</label><br />
+  <input type="text" name="phone" id="phone" value="{{contact.phone}}" class="form-control"/>
+</div>
+<div class="form-group">
+  <label for="email">Email:</label><br />
+  <input type="text" name="email" id="email" value="{{contact.email}}" class="form-control"/>
+</div>
+  <input type="submit" value="Submit" class="btn btn-info" />
+</form>
+<div class="panel-body">
+<a href="{% url 'contact_detail' contact.id%}"><- Back</a>
+</div>
+</div>
+
+{% endblock content %}

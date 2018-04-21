@@ -1,0 +1,46 @@
+href="/todos/details/{{todo.id}}"
+
+
+<div class="container">
+
+      {% block content %}
+      
+      {% endblock content %}
+
+  </div>
+
+
+
+ {% extends "admin/base.html" %}
+
+{% block branding %}
+  <h1 id="site-name">TodoList Administration</h1>
+{% endblock %}
+
+
+
+<a href="{% url 'todo_edit' todo_id=todo.id %}">Edit</a>
+
+
+
+<a href="{% url 'todo_detail' todo_id=todo.id %}"> {{todo.title}} </a>
+
+
+
+
+
+SEARCH
+
+pip install django-simple-search
+********************************************************
+
+from simple_search import search_filter
+from .models import BlogPost
+
+search_fields = ['^title', 'intro', 'content']
+query = 'search term here'
+posts = BlogPost.objects.filter(search_filter(search_fields, query))
+
+
+
+todo.title = title;

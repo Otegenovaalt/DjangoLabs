@@ -1,0 +1,13 @@
+body{
+	background-color: white;
+}
+
+.details a:hover{
+	text-decoration: none;
+}
+/*.contact-detail{
+	background-color: yellow;
+	margin-top: 10px;
+	width: 100px;
+	height: 30px;
+}*/

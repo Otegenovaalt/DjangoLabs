@@ -1,0 +1,10 @@
+{% extends "header.html" %}
+
+{% block content %}
+<br>
+<a href="/todos"><-BACK</a>
+<br>
+<hr>
+<a href="{% url 'editTodo' todo.id %}">{{todo.title}}</a>
+
+{% endblock content %}

@@ -1,0 +1,18 @@
+{% extends "header.html" %}
+
+{% block content %}
+
+<div class="well">
+	{% for todo in todo_list %}
+	<div class="panel panel-info">
+		<div class="panel-heading">
+			<kbd>{{todo.priority}}</kbd>
+			{{todo.title}}
+		</div>
+		<div class="panel-body">
+			<a href="{% url 'delete' todo.id %}" className="icon"><button class="btn btn-danger">delete</button></a>
+		</div>
+	</div>
+	{% endfor %}
+</div>
+{% endblock content %}
